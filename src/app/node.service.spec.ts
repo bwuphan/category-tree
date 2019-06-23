@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-
+import { Node } from './node';
 import { NodeService } from './node.service';
 
 describe('NodeService', () => {
@@ -12,8 +12,22 @@ describe('NodeService', () => {
 
   describe('addNode()', () => {
     it('should add a node', () => {
+      const service: NodeService = TestBed.get(NodeService);
 
-      expect(true).toBe(true);
-    })
+      const parentNode: Node = {
+       name: 'parent',
+       children: []
+      };
+
+      const childNode: Node = {
+        name: 'child',
+        children: []
+      };
+
+      service.addNode(childNode, parentNode);
+
+      expect(parentNode.children.length).toBe(1);
+      expect(JSON.stringify(parentNode.children[0])).toBe(JSON.stringify(childNode));
+    });
   });
 });
