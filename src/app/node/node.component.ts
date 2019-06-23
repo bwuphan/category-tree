@@ -15,6 +15,9 @@ export class NodeComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!this.node) {
+      this.node = new Node();
+    }
   }
 
   createNode() {
