@@ -11,7 +11,7 @@ describe('NodeService', () => {
   });
 
   describe('addNode()', () => {
-    it('should add a node', () => {
+    it('should add a child node to the parent', () => {
       const service: NodeService = TestBed.get(NodeService);
 
       const parentNode: Node = {
