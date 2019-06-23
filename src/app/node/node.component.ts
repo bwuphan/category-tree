@@ -10,9 +10,7 @@ import { NodeService } from '../node.service';
 export class NodeComponent implements OnInit {
   @Input() node: Node;
 
-  constructor(private nodeService: NodeService) {
-
-  }
+  constructor(private nodeService: NodeService) {}
 
   ngOnInit() {
     if (!this.node) this.node = new Node();
