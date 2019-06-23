@@ -1,3 +1,34 @@
-<p>
-  node works!
-</p>
+<div *ngIf="node" style="width: 20rem;">
+  <div class="input-group">
+  <input class="form-control" [(ngModel)]="node.name" placeholder="name" />
+  <div class="input-group-append">
+    <button (click)="addChild()" class="btn btn-primary">Add Child</button>
+  </div>
+</div>
+  <div>
+    <div style="display: flex; justify-content: space-between;">
+    <label>Children: </label>
+    <div>
+      <input
+        [(ngModel)]="hideChildren"
+        type="checkbox"
+        class="form-check-input"
+        id="hide-children-checkbox"
+      >
+      <label
+        class="form-check-label"
+        for="hide-children-checkbox"
+      >Hide Children</label>
+    </div>
+    </div>
+    <ul *ngIf="!hideChildren">
+      <li *ngFor="let child of node.children">
+        <app-node></app-node>
+      </li>
+    </ul>
+  </div>
+</div>
+<div *ngIf="!node">
+  <button (click)="createNode()" class="btn btn-primary">Create Node</button>
+</div>
+{{ hideChildren }}
