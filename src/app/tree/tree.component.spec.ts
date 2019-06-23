@@ -22,8 +22,4 @@ describe('TreeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should be able to add a node', () => {
-    expect(component.addNode()).toBe(false);
-  })
 });
