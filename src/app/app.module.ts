@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TreeComponent } from './tree/tree.component';
 import { NodeComponent } from './node/node.component';
 import { AddNodeModalComponent } from './add-node-modal/add-node-modal.component';
+import { NodeChildrenComponent } from './node-children/node-children.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TreeComponent,
     NodeComponent,
-    AddNodeModalComponent
+    AddNodeModalComponent,
+    NodeChildrenComponent
   ],
   imports: [
     BrowserModule,
