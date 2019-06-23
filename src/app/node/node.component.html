@@ -1,8 +1,15 @@
 <div *ngIf="node" style="width: 20rem;">
   <div class="input-group">
-  <input class="form-control" [(ngModel)]="node.name" placeholder="name" />
+  <input
+    [(ngModel)]="node.name"
+    class="form-control"
+    placeholder="name"
+  />
   <div class="input-group-append">
-    <button (click)="addChild()" class="btn btn-success">Add Child</button>
+    <button
+      (click)="addChild()"
+      class="btn btn-success"
+    >Add Child</button>
   </div>
 </div>
 <div class="d-flex justify-content-between">
@@ -19,7 +26,8 @@
       for="hide-children-checkbox"
     >Hide Children</label>
   </div>
-  </div>
+</div>
+<div>
   <ul *ngIf="!hideChildren">
     <li *ngFor="let child of node.children">
       <app-node></app-node>
@@ -27,5 +35,8 @@
   </ul>
 </div>
 <div *ngIf="!node">
-  <button (click)="createNode()" class="btn btn-primary">Create Node</button>
+  <button
+    (click)="createNode()"
+    class="btn btn-primary"
+  >Create Node</button>
 </div>
