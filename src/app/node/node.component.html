@@ -1,5 +1,5 @@
 <div *ngIf="node" style="width: 20rem;">
-  <div class="input-group" *ngIf="editMode">
+  <div class="input-group" [hidden]="!editMode">
     <input
       [(ngModel)]="node.name"
       class="form-control"
@@ -12,7 +12,9 @@
       >Save</button>
     </div>
   </div>
-  <h3 (click)="toggleName()" *ngIf="!editMode">{{ node.name }}</h3>
-  <button (click)="addChild()" class="btn btn-primary">Add Child</button>
-<app-node-children [children]="node.children"></app-node-children>
+  <h3 (click)="toggleName()" [hidden]="editMode">{{ node.name }}</h3>
+  <div [hidden]="editMode">
+    <button (click)="addChild()" class="btn btn-primary">Add Child</button>
+    <app-node-children [children]="node.children"></app-node-children>
+  </div>
 </div>
