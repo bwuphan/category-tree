@@ -1,4 +1,4 @@
-<div *ngIf="node" style="width: 20rem;">
+<div class="node" *ngIf="node">
   <!--- Node Form. --->
   <app-node-form
     [node]="node"
@@ -6,18 +6,22 @@
     (onSave)="toggleName()"
   ></app-node-form>
 
-  <!--- Display Node Name. --->
-  <h4
-    (click)="toggleName()"
-    [hidden]="editMode"
-  >{{ node.name }}</h4>
 
-  <!--- Children. --->
   <div [hidden]="editMode">
-    <button
-      (click)="addChild()"
-      class="btn btn-primary"
-    >Add Child</button>
+    <div class="d-flex justify-content-between">
+      <!--- Display Node Name. --->
+      <h4
+        (click)="toggleName()"
+      >{{ node.name }}</h4>
+
+      <!--- Add Child Button. --->
+      <button
+        (click)="addChild()"
+        class="btn btn-primary"
+      >Add Child</button>
+
+    </div>
+    <!--- Children Component. -->
     <app-node-children [children]="node.children"></app-node-children>
   </div>
 </div>
