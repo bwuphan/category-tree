@@ -1,4 +1,6 @@
-<div class="node" *ngIf="node">
+<div
+  class="node"
+  *ngIf="node">
   <!--- Node Form. --->
   <app-node-form
     [node]="node"
@@ -17,8 +19,8 @@
 
       <!--- Add Child Button. --->
       <button
-        (click)="addChild()"
         class="btn btn-primary"
+        (click)="addChild()"
       >Add Child</button>
 
     </div>
