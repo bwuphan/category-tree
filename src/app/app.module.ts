@@ -7,6 +7,7 @@ import { TreeComponent } from './tree/tree.component';
 import { NodeComponent } from './node/node.component';
 import { AddNodeModalComponent } from './add-node-modal/add-node-modal.component';
 import { NodeChildrenComponent } from './node-children/node-children.component';
+import { NodeFormComponent } from './node-form/node-form.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NodeChildrenComponent } from './node-children/node-children.component';
     TreeComponent,
     NodeComponent,
     AddNodeModalComponent,
-    NodeChildrenComponent
+    NodeChildrenComponent,
+    NodeFormComponent
   ],
   imports: [
     BrowserModule,

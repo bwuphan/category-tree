@@ -1,23 +1,5 @@
 <div *ngIf="node" style="width: 20rem;">
-  <div *ngIf="name.errors" class="text-danger">
-    <span *ngIf="name.dirty && name.errors.required">Name is required</span>
-  </div>
-  <div class="input-group" [hidden]="!editMode">
-    <input
-      [(ngModel)]="node.name"
-      class="form-control"
-      required
-      placeholder="name"
-      #name="ngModel"
-    />
-    <div class="input-group-append">
-      <button
-        (click)="toggleName()"
-        [disabled]="name.errors"
-        class="btn btn-success"
-      >Save</button>
-    </div>
-  </div>
+  <app-node-form [node]="node" (onSave)="toggleName()"></app-node-form>
   <h4 (click)="toggleName()" [hidden]="editMode">{{ node.name }}</h4>
   <div [hidden]="editMode">
     <button (click)="addChild()" class="btn btn-primary">Add Child</button>

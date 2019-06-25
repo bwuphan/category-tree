@@ -1,0 +1,20 @@
+
+<div *ngIf="(name.errors | json) != '{}'" class="text-danger">
+<span *ngIf="name.dirty && name.errors.required">Name is required</span>
+</div>
+<div class="input-group" [hidden]="!editMode">
+<input
+  [(ngModel)]="node.name"
+  class="form-control"
+  required
+  placeholder="name"
+  #name="ngModel"
+/>
+<div class="input-group-append">
+  <button
+    (click)="toggleName()"
+    [disabled]="name.errors"
+    class="btn btn-success"
+  >Save</button>
+</div>
+</div>
