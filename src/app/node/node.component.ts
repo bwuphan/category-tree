@@ -24,5 +24,11 @@ export class NodeComponent implements OnInit {
     this.nodeService.addNode(new Node(), this.node);
   }
 
+  toggleName(): void {
+    this.editMode = !this.editMode;
+  }
+
   hideChildren: boolean = false;
+
+  editMode: boolean = true;
 }

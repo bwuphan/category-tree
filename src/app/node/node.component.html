@@ -1,42 +1,18 @@
 <div *ngIf="node" style="width: 20rem;">
-  <div class="input-group">
-  <input
-    [(ngModel)]="node.name"
-    class="form-control"
-    placeholder="name"
-  />
-  <div class="input-group-append">
-    <button
-      (click)="addChild()"
-      class="btn btn-success"
-    >Add Child</button>
-  </div>
-</div>
-<div class="d-flex justify-content-between">
-  <label>Children: </label>
-  <div>
+  <div class="input-group" *ngIf="editMode">
     <input
-      [(ngModel)]="hideChildren"
-      type="checkbox"
-      class="form-check-input"
-      id="hide-children-checkbox"
-    >
-    <label
-      class="form-check-label"
-      for="hide-children-checkbox"
-    >Hide Children</label>
+      [(ngModel)]="node.name"
+      class="form-control"
+      placeholder="name"
+    />
+    <div class="input-group-append">
+      <button
+        (click)="toggleName()"
+        class="btn btn-success"
+      >Save</button>
+    </div>
   </div>
-</div>
-<div>
-  <ul *ngIf="!hideChildren">
-    <li *ngFor="let child of node.children">
-      <app-node></app-node>
-    </li>
-  </ul>
-</div>
-<div *ngIf="!node">
-  <button
-    (click)="createNode()"
-    class="btn btn-primary"
-  >Create Node</button>
+  <h3 (click)="toggleName()" *ngIf="!editMode">{{ node.name }}</h3>
+  <button (click)="addChild()" class="btn btn-primary">Add Child</button>
+<app-node-children [children]="node.children"></app-node-children>
 </div>
