@@ -14,7 +14,10 @@
   </div>
 </div>
 <div>
-  <ul *ngIf="!hideChildren && children">
+  <ul 
+    *ngIf="children"
+    [hidden]="hideChildren"
+  >
     <li *ngFor="let child of children">
       <app-node></app-node>
     </li>
