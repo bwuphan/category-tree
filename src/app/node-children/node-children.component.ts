@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Node } from '../node';
 
 @Component({
   selector: 'app-node-children',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./node-children.component.scss']
 })
 export class NodeChildrenComponent implements OnInit {
+  @Input() children: Node[];
 
   constructor() { }
 
   ngOnInit() {
+    if (!this.children) this.children = [];
   }
 
+  hideChildren: boolean = false;
 }

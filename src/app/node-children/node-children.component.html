@@ -1,3 +1,22 @@
-<p>
-  node-children works!
-</p>
+<div class="d-flex justify-content-between">
+  <label>Children: </label>
+  <div>
+    <input
+      [(ngModel)]="hideChildren"
+      type="checkbox"
+      class="form-check-input"
+      id="hide-children-checkbox"
+    >
+    <label
+      class="form-check-label"
+      for="hide-children-checkbox"
+    >Hide Children</label>
+  </div>
+</div>
+<div>
+  <ul *ngIf="!hideChildren && children">
+    <li *ngFor="let child of children">
+      <app-node></app-node>
+    </li>
+  </ul>
+</div>
