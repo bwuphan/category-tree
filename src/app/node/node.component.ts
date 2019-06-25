@@ -16,19 +16,17 @@ export class NodeComponent implements OnInit {
     if (!this.node) this.node = new Node();
   }
 
-  createNode() {
+  createNode(): void {
     this.node = new Node();
   }
 
-  addChild() {
+  addChild(): void {
     this.nodeService.addNode(new Node(), this.node);
   }
 
-  toggleName(): void {
+  toggleEditMode(): void {
     this.editMode = !this.editMode;
   }
-
-  hideChildren: boolean = false;
 
   editMode: boolean = true;
 }
