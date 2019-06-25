@@ -5,7 +5,7 @@
   <app-node-form
     [node]="node"
     [editMode]="editMode"
-    (onSave)="toggleName()"
+    (onSave)="toggleEditMode()"
   ></app-node-form>
 
 
@@ -14,7 +14,7 @@
       <!--- Display Node Name. --->
       <h4
         class="node__display-name"
-        (click)="toggleName()"
+        (click)="toggleEditMode()"
       >{{ node.name }}</h4>
 
       <!--- Add Child Button. --->
