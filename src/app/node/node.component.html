@@ -1,5 +1,5 @@
 <div *ngIf="node" style="width: 20rem;">
-  <app-node-form [node]="node" (onSave)="toggleName()"></app-node-form>
+  <app-node-form [node]="node" (onSave)="toggleName()" [editMode]="editMode"></app-node-form>
   <h4 (click)="toggleName()" [hidden]="editMode">{{ node.name }}</h4>
   <div [hidden]="editMode">
     <button (click)="addChild()" class="btn btn-primary">Add Child</button>

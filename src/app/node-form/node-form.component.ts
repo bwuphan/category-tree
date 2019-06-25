@@ -8,12 +8,12 @@ import { Node } from '../node';
 })
 export class NodeFormComponent {
   @Input() node: Node;
+  @Input() editMode: boolean;
   @Output() onSave: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
-  submit() {
+  submit(): void {
     this.onSave.emit();
   }
-
 }
