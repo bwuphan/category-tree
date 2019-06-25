@@ -1,10 +1,10 @@
 .node { width: 20rem; }
 
 .node__display-name {
-  -webkit-transition: color .5s linear; /* Saf3.2+, Chrome */
-  -moz-transition: color .5s linear; /* FF3.7+ */
-  -o-transition: color .5s linear; /* Opera 10.5 */
-  transition: color .5s linear;
+  -webkit-transition: color .25s linear; /* Saf3.2+, Chrome */
+  -moz-transition: color .25s linear; /* FF3.7+ */
+  -o-transition: color .25s linear; /* Opera 10.5 */
+  transition: color .25s linear;
 }
 
 .node__display-name:hover {
