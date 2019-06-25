@@ -1,5 +1,7 @@
 <div class="d-flex justify-content-between">
   <label>Children: </label>
+
+  <!--- Hide Children Checkbox. --->
   <div>
     <input
       [(ngModel)]="hideChildren"
@@ -13,8 +15,11 @@
     >Hide Children</label>
   </div>
 </div>
+
 <div>
-  <ul 
+
+  <!--- List of Children. --->
+  <ul
     *ngIf="children"
     [hidden]="hideChildren"
   >
@@ -22,4 +27,5 @@
       <app-node></app-node>
     </li>
   </ul>
+
 </div>
