@@ -14,7 +14,11 @@ export class NodeService {
    * @param parent: Node - The parent node that is gaining a child.
    * @return void
    */
-  addNode(child: Node, parent: Node): void {
+  addChild(child: Node, parent: Node): void {
     parent.children.push(child);
+  }
+
+  removeChild(index: number, parent: Node): void {
+
   }
 }
