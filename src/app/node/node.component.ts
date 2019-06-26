@@ -21,7 +21,7 @@ export class NodeComponent implements OnInit {
   }
 
   addChild(): void {
-    this.nodeService.addNode(new Node(), this.node);
+    this.nodeService.addChild(new Node(), this.node);
   }
 
   toggleEditMode(): void {
