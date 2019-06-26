@@ -19,6 +19,8 @@ export class NodeService {
   }
 
   removeChild(index: number, parent: Node): void {
-
+    if (index >=0 && index < parent.children.length) {
+      parent.children.splice(index, 1);
+    }
   }
 }
