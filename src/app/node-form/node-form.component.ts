@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
 import { Node } from '../node';
 
 @Component({
@@ -12,6 +12,10 @@ export class NodeFormComponent {
   @Output() onSave: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
+
+  ngOnInit() {
+    if (!this.node) this.node = new Node();
+  }
 
   submit(): void {
     this.onSave.emit();
