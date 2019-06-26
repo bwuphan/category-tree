@@ -9,7 +9,7 @@
       id="hide-children-checkbox"
       [(ngModel)]="hideChildren"
     >
-    <label class="form-check-label">Hide Children</label>
+    <label class="form-check-label mb-0">Hide Children</label>
   </div>
 </div>
 
@@ -20,8 +20,16 @@
     *ngIf="children"
     [hidden]="hideChildren"
   >
-    <li *ngFor="let child of children">
+    <li
+      class="pb-3"
+      *ngFor="let child of children; let i = index"
+      [attr.data-index]="i"
+    >
       <app-node></app-node>
+      <button
+        class="btn btn-danger text-center"
+        (click)="delete(i)"
+      >Delete Child</button>
     </li>
   </ul>
 

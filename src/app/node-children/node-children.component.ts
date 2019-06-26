@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Node } from '../node';
 
@@ -9,11 +9,16 @@ import { Node } from '../node';
 })
 export class NodeChildrenComponent implements OnInit {
   @Input() children: Node[];
+  @Output() removeChild: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
     if (!this.children) this.children = [];
+  }
+
+  delete(index) {
+    this.removeChild.emit(index)
   }
 
   hideChildren: boolean = false;

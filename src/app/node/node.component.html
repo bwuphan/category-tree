@@ -1,6 +1,7 @@
 <div
-  class="node pb-3"
-  *ngIf="node">
+  class="node"
+  *ngIf="node"
+>
   <!--- Node Form. --->
   <app-node-form
     [node]="node"
@@ -25,6 +26,9 @@
 
     </div>
     <!--- Children Component. -->
-    <app-node-children [children]="node.children"></app-node-children>
+    <app-node-children
+      [children]="node.children"
+      (removeChild)="removeChild($event)"
+    ></app-node-children>
   </div>
 </div>

@@ -28,5 +28,9 @@ export class NodeComponent implements OnInit {
     this.editMode = !this.editMode;
   }
 
+  removeChild(index): void {
+    this.nodeService.removeChild(index, this.node);
+  }
+
   editMode: boolean = true;
 }
